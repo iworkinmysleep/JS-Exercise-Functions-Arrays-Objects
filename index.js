@@ -50,27 +50,22 @@ function makePersonObject(id, name, email) {
 
 /**
  * ### Challenge `getName`
- * 
- * @instructions
- * This function takes as its only argument
- * an object containing a `name` property,
- * and return a string that reads `Hello, my name is {name}`,
- * where `{name}` is the name stored in the object.
- * 
- * For example, if we invoke `getName`
- * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
- * the returned value should look like `Hello, my name is Leia`.
-*/
-function getName(id,name,email) {
-  let person = {
-    id:id,
-    name:name,
-    email:email
-   
-  };
-  return `Hello, my name is ${person.name}.`;
+ * @instructions This function takes as its only argument
+an object containing a `name` property,
+and return a string that reads `Hello, my name is {name}`,
+where `{name}` is the name stored in the object.
+
+For example, if we invoke `getName`
+passing { id: 1, name: 'Leia', email: 'leia
+ * @leia .com` } as the argument,
+the returned value should look like `Hello, my name is Leia`.
+ * @param {number} name
+ */
+function getName(name){
+  return `Hello, my name is ${this.name}.`;
 }
-console.log(getName(1, 'Leia', 'leia@leia.com'))
+
+getName(1, 'Leia', 'leia@leia.com')
 /**
  * ### Challenge `makeSmartPerson`
  * 
@@ -84,13 +79,17 @@ console.log(getName(1, 'Leia', 'leia@leia.com'))
  *         and returns a string like `Hello, my name is {name}`.
  *         where `{name}` is the name passed into `makeSmartPerson`.
 */
-function makeSmartPerson(/* code here */) {
-  /* code here */
+function makeSmartPerson(name){
+  return{
+    name: name,
+    sum: function(a,b){
+      return a + b;
+    },
+    speak: function(){
+      return `Hello, my name is ${this.name}.`;
+    },
+  }
 }
-
-
-
-
 
 /*
 // ⭐️ Example Test Data ⭐️
